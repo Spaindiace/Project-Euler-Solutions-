@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#pragma GCC optimize("Ofast")
+
+
+
+  bool ispalin(int x){
+          string s=to_string(x);
+          string r=s;
+          reverse(r.begin(),r.end());
+          return r==s;
+  }
+    
+
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+      vector<int>str;
+                        for(int a=100; a<=999; a++){
+                             for(int b=100; b<=999; b++){
+                               int prod=(a*b);
+                                if(ispalin(prod)){
+                                      str.push_back(prod);
+                                }
+                             }
+                        }
+                        sort(str.begin(),str.end());
+                        str.erase(unique(str.begin(),str.end()),str.end());
+                      
+    int t;
+    cin >> t;
+    while(t--) {
+            int n;
+            cin>>n;
+                        auto it=lower_bound(str.begin(),str.end(),n);
+                        if(it==str.begin()){
+                          cout<<-1<<endl;
+                          
+                        }
+                        else {
+                          --it;
+                          cout<<*it<<endl;
+                          
+                        }
+    }
+    return 0;
+}
