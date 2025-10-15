@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#pragma GCC optimize("O3,unroll-loops")
+  
+    
+
+void solve(){
+  
+ ll n;
+ cin>>n;
+ 
+ n--;
+ 
+ 
+ ll sum3=(n/3)*3*((n/3)+1)/2;
+ ll sum5=(n/5)*5*((n/5)+1)/2;
+ ll sum15=(n/15)*15*((n/15)+1)/2;
+ 
+ cout<<sum3+sum5-sum15<<endl;
+
+}
+ 
+signed main() {
+  
+   ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--)
+   {
+      
+      solve ();
+    }
+    return 0;
+} 
